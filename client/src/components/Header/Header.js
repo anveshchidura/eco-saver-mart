@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { Context } from "../../ContextStore";
 import {
     Navbar,
-    NavDropdown,
+   // NavDropdown,
     Nav,
     OverlayTrigger,
     Tooltip,
@@ -10,7 +10,7 @@ import {
 } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import {
-    BsFillPersonFill,
+   // BsFillPersonFill,
     BsFillEnvelopeFill,
     BsFillPlusCircleFill,
 } from "react-icons/bs";

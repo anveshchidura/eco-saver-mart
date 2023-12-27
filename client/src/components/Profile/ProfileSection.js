@@ -3,7 +3,7 @@ import { Col, Row } from "react-bootstrap";
 import { BsFillPersonFill } from "react-icons/bs";
 import { MdEmail, MdPhoneAndroid } from "react-icons/md";
 import { FaSellsy } from "react-icons/fa";
-import { GrEdit } from "react-icons/gr";
+//import { GrEdit } from "react-icons/gr";
 
 function ProfileSection({ params }) {
     return (

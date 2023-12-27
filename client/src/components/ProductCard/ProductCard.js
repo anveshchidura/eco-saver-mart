@@ -2,11 +2,11 @@ import {
     Card,
     Row,
     Col,
-    Tabs,
-    Tab,
-    Image,
-    OverlayTrigger,
-    Tooltip,
+   // Tabs,
+    //Tab,
+   // Image,
+   // OverlayTrigger,
+    //Tooltip,
 } from "react-bootstrap";
 import { GoLocation } from "react-icons/go";
 
