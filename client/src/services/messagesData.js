@@ -1,4 +1,4 @@
-const baseUrl = 'https://eco-saver-mart.onrender.com';
+const baseUrl = 'http://localhost:10000';
 
 
 export async function createChatRoom(receiver, message) {

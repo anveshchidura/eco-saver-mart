@@ -51,5 +51,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "https://eco-saver-mart.onrender.com"
+  "proxy": "http://localhost:10000"
 }
