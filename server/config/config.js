@@ -1,6 +1,6 @@
 const TABLE_NAME = 'all-for-you';
 const config = {
-    PORT: process.env.PORT || 4000,
+    PORT: process.env.PORT || 10000,
     DB_CONNECTION: `mongodb+srv://project1:Squadra@cluster0.72nhdqq.mongodb.net/`,
     SECRET: 'badumts',
     SALT: 10,
