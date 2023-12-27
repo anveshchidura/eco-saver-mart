@@ -3,31 +3,13 @@ import { getUserConversations, sendMessage } from '../services/messagesData';
 import { Container, Row, Form, InputGroup, Button, Alert } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
-import '../components/Messages/Aside.css'
-import '../components/Messages/Article.css'
+import '../components/Messages/Aside.css';
+import '../components/Messages/Article.css';
+
 function Messages({ match }) {
-    console.log(match);
     let chatId = match.params.id;
-    const [conversations, setConversations] = useState([])
-    const [isSelected, setIsSelected] = useState(false);
-    const [selected, setSelected] = useState({
-        chats: {
-            _id: 0,
-            seller: {
-                _id: "",
-                avatar: "",
-                name: ""
-            },
-            buyer: {
-                _id: "",
-                avatar: "",
-                name: ""
-            },
-            conversation: []
-        },
-        isBuyer: null,
-        myId: 0
-    });
+    const [conversations, setConversations] = useState([]);
+    const [selected, setSelected] = useState(null);
     const [message, setMessage] = useState("");
     const [alert, setAlert] = useState(null);
     const [alertShow, setAlertShow] = useState(false);
@@ -36,29 +18,48 @@ function Messages({ match }) {
         getUserConversations()
             .then(res => {
                 setConversations(res);
+                if (chatId) {
+                    const selectedChat = res.find(x => x.chats._id === chatId);
+                    if (selectedChat) {
+                        setSelected(selectedChat);
+                    }
+                }
             })
-            .catch(err => console.log(err))
-        if (isSelected) {
-            setSelected(conversations.find(x => x.chats._id === chatId))
-        }
-    }, [isSelected, chatId, setSelected])
+            .catch(err => {
+                console.error(err);
+                setAlert("Failed to load conversations.");
+                setAlertShow(true);
+            });
+    }, [chatId]);
 
     function handleMsgSubmit(e) {
         e.preventDefault();
-        sendMessage(chatId, message)
-            .then((res) => {
-                setAlert("Message sent!");
-                setAlertShow(true);
-                setMessage("");
-                setSelected(selected, selected.chats.conversation.push({ message, senderId: res.sender }))
-                setTimeout(() => {
-                    setAlert(null);
-                    setAlertShow(false);
-                }, 1000);
-            })
-            .catch(err => console.log(err))
+        if (chatId && message.trim()) {
+            sendMessage(chatId, message)
+                .then((res) => {
+                    setAlert("Message sent!");
+                    setAlertShow(true);
+                    setMessage("");
+                    setSelected(prevSelected => {
+                        if (prevSelected) {
+                            const updatedSelected = { ...prevSelected };
+                            updatedSelected.chats.conversation.push({ message, senderId: res.sender });
+                            return updatedSelected;
+                        }
+                        return prevSelected;
+                    });
+                    setTimeout(() => {
+                        setAlert(null);
+                        setAlertShow(false);
+                    }, 3000);
+                })
+                .catch(err => {
+                    console.error(err);
+                    setAlert("Failed to send message.");
+                    setAlertShow(true);
+                });
+        }
     }
-
 
     return (
         <Container>
@@ -69,7 +70,7 @@ function Messages({ match }) {
                         <>
                             {conversations.map(x =>
                                 <div className="chat-connections" key={x.chats._id}>
-                                    <Link onClick={() => setIsSelected(true)} to={`/messages/${x.chats._id}`}>
+                                    <Link onClick={() => setSelected(x)} to={`/messages/${x.chats._id}`}>
                                         {x.isBuyer ?
                                             <><img src={x.chats.seller.avatar} alt="user-avatar" /> <span>{x.chats.seller.name}</span></>
                                             :
@@ -83,62 +84,58 @@ function Messages({ match }) {
                         <h5>No messages yet</h5>
                     }
                 </aside>
-                {selected !== undefined ? (
+                {selected && (
                     <article className="col-lg-8 col-md-8">
-                        {isSelected &&
-                            <>
-                                <Row>
-                                    <div className="chat-selected-header col-lg-12">
-                                        {selected.isBuyer ?
-                                            <Link to={`/profile/${selected.chats.seller._id}`}>
-                                                <img src={selected.chats.seller.avatar} alt="user-avatar" />
-                                                <span>{selected.chats.seller.name}</span>
-                                            </Link>
-                                            :
-                                            <Link to={`/profile/${selected.chats.buyer._id}`}>
-                                                <img src={selected.chats.buyer.avatar} alt="user-avatar" />
-                                                <span>{selected.chats.buyer.name}</span>
-                                            </Link>
-                                        }
-                                    </div>
-                                </Row>
-
-                                {alertShow &&
-                                    <Alert variant="success" onClose={() => setAlertShow(false)} dismissible>
-                                        <p>
-                                            {alert}
-                                        </p>
-                                    </Alert>
+                        <Row>
+                            <div className="chat-selected-header col-lg-12">
+                                {selected.isBuyer ?
+                                    <Link to={`/profile/${selected.chats.seller._id}`}>
+                                        <img src={selected.chats.seller.avatar} alt="user-avatar" />
+                                        <span>{selected.chats.seller.name}</span>
+                                    </Link>
+                                    :
+                                    <Link to={`/profile/${selected.chats.buyer._id}`}>
+                                        <img src={selected.chats.buyer.avatar} alt="user-avatar" />
+                                        <span>{selected.chats.buyer.name}</span>
+                                    </Link>
                                 }
-                                <div className="chat-selected-body col-lg-12">
-                                    {selected.chats.conversation.map(x =>
-                                        <div className={selected.myId === x.senderId ? 'me' : "not-me"} key={x._id}>
-                                            <span className="message">{x.message}</span>
-                                        </div>
-                                    )}
-                                </div>
-                                <div className="chat-selected-footer col-lg-12">
-                                    <Form onSubmit={handleMsgSubmit}>
-                                        <Form.Group>
-                                            <InputGroup>
-                                                <Form.Control
-                                                    className='cnts-btn'
-                                                    as="textarea"
-                                                    required
-                                                    value={message}
-                                                    onChange={(e) => setMessage(e.target.value)}>
-                                                </Form.Control>
-                                                <InputGroup.Append>
-                                                    <Button className='cnts-btn' type="submit" variant="secondary">Send</Button>
-                                                </InputGroup.Append>
-                                            </InputGroup>
-                                        </Form.Group>
-                                    </Form>
-                                </div>
-                            </>
+                            </div>
+                        </Row>
+
+                        {alertShow &&
+                            <Alert variant="success" onClose={() => setAlertShow(false)} dismissible>
+                                <p>
+                                    {alert}
+                                </p>
+                            </Alert>
                         }
+                        <div className="chat-selected-body col-lg-12">
+                            {selected.chats.conversation.map(x =>
+                                <div className={selected.myId === x.senderId ? 'me' : "not-me"} key={x._id}>
+                                    <span className="message">{x.message}</span>
+                                </div>
+                            )}
+                        </div>
+                        <div className="chat-selected-footer col-lg-12">
+                            <Form onSubmit={handleMsgSubmit}>
+                                <Form.Group>
+                                    <InputGroup>
+                                        <Form.Control
+                                            className='cnts-btn'
+                                            as="textarea"
+                                            required
+                                            value={message}
+                                            onChange={(e) => setMessage(e.target.value)}>
+                                        </Form.Control>
+                                        <InputGroup.Append>
+                                            <Button className='cnts-btn' type="submit" variant="secondary">Send</Button>
+                                        </InputGroup.Append>
+                                    </InputGroup>
+                                </Form.Group>
+                            </Form>
+                        </div>
                     </article>
-                ) : null}
+                )}
             </Row>
         </Container>
     )

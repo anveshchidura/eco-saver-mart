@@ -6,7 +6,7 @@ import ArchivedSells from '../components/Profile/Sells/ArchivedSells'
 import SellerProfile from '../components/Profile/SellerProfile'
 import { getUserById } from '../services/userData';
 import { Col, Row, Button } from 'react-bootstrap';
-import Convo from '../components/Convo/Convo';
+//import Convo from '../components/Convo/Convo';
 
 import '../components/Profile/Profile.css';
 

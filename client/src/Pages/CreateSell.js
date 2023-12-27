@@ -1,7 +1,7 @@
 import { Component } from "react";
 import { Form, Button, Col, Spinner, Alert } from "react-bootstrap";
 import { createProduct } from "../services/productData";
-import SimpleSider from "../components/Siders/SimpleSider";
+//import SimpleSider from "../components/Siders/SimpleSider";
 import "../components/CreateSell/CreateSell.css";
 
 class AddProduct extends Component {

@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import InfiniteScroll from "react-infinite-scroll-component";
 import CategoriesNav from "../components/Categories/CategoriesNav";
 import ProductCard from "../components/ProductCard/ProductCard";
 import { Col, Spinner, Dropdown } from "react-bootstrap";
@@ -24,36 +23,35 @@ function Categories({ match }) {
     const [sort, setSort] = useState("oldest");
 
     useEffect(() => {
-        setPage(1);
         setLoading(true);
-        setQuery("");
         getAll(1, currentCategory, query)
             .then((res) => {
                 setProduct(res.products);
                 setLoading(false);
-                setPage((page) => page + 1);
-                setQuery("");
+                setPage(2);
             })
             .catch((err) => console.log(err));
-    }, [currentCategory, setProduct]);
-
-    const searchFunc = (e) => {
-        setLoading(true);
-
-        getAll(1, currentCategory, e.target.value)
-            .then((res) => {
-                setProduct(res.products);
-                setLoading(false);
-                setPage((page) => page + 1);
-                //setQuery("");
-            })
-            .catch((err) => console.log(err));
-    };
+    }, [currentCategory, query]); // Added query to the dependency array
 
     const handleSearch = (e) => {
         e.preventDefault();
         setQuery(e.target.value);
-        searchFunc(e);
+    };
+
+    const compareFunction = (a, b) => {
+        if (sort === "oldest") {
+            return a.addedAt.localeCompare(b.addedAt);
+        }
+        if (sort === "newest") {
+            return b.addedAt.localeCompare(a.addedAt);
+        }
+        if (sort === "lowerPrice") {
+            return a.price - b.price; // Corrected the order for sorting by price
+        }
+        if (sort === "biggerPrice") {
+            return b.price - a.price;
+        }
+        return 0; // Return 0 if no sort conditions are met
     };
 
     return (
@@ -81,35 +79,27 @@ function Categories({ match }) {
                     <Dropdown.Menu className="dropdown-btn">
                         <Dropdown.Item
                             className="dropdown-btn-items"
-                            onClick={() => {
-                                setSort("oldest");
-                            }}
+                            onClick={() => setSort("oldest")}
                         >
                             Oldest <BiDownArrowAlt />
                         </Dropdown.Item>
                         <Dropdown.Item
                             className="dropdown-btn-items"
-                            onClick={() => {
-                                setSort("newest");
-                            }}
+                            onClick={() => setSort("newest")}
                         >
                             Newest <BiUpArrowAlt />
                         </Dropdown.Item>
                         <Dropdown.Item
                             className="dropdown-btn-items"
-                            onClick={() => {
-                                setSort("lowerPrice");
-                            }}
+                            onClick={() => setSort("lowerPrice")}
                         >
                             Price <BiSortDown />
                         </Dropdown.Item>
                         <Dropdown.Item
                             className="dropdown-btn-items"
-                            onClick={() => {
-                                setSort("biggerPrice");
-                            }}
+                            onClick={() => setSort("biggerPrice")}
                         >
-                            Price <BiSortUp />{" "}
+                            Price <BiSortUp />
                         </Dropdown.Item>
                     </Dropdown.Menu>
                 </Dropdown>
@@ -125,34 +115,14 @@ function Categories({ match }) {
                                 });
                             }
                         }}
-                        hasMore={() => {
-                            if (products.length > 0) {
-                                return true;
-                            }
-                            return false;
-                        }}
+                        hasMore={() => products.length > 0}
                         className="row"
                     >
-                        {products
-                            .sort((a, b) => {
-                                if (sort === "oldest") {
-                                    return a.addedAt.localeCompare(b.addedAt);
-                                }
-                                if (sort === "newest") {
-                                    return b.addedAt.localeCompare(a.addedAt);
-                                }
-                                if (sort === "lowerPrice") {
-                                    return b.price - a.price;
-                                }
-                                if (sort === "biggerPrice") {
-                                    return a.price - b.price;
-                                }
-                            })
-                            .map((x) => (
-                                <Col xs={12} md={6} lg={3} key={x._id.toString()}>
-                                    <ProductCard params={x} />
-                                </Col>
-                            ))}
+                        {products.sort(compareFunction).map((x) => (
+                            <Col xs={12} md={6} lg={3} key={x._id.toString()}>
+                                <ProductCard params={x} />
+                            </Col>
+                        ))}
                     </div>
                 ) : (
                     <div className="spinner">

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Col, Row, Spinner } from "react-bootstrap";
-import SimpleSider from "../components/Siders/SimpleSider";
+//import SimpleSider from "../components/Siders/SimpleSider";
 import Breadcrumb from "../components/Details/Breadcrumb";
 import ProductInfo from "../components/Details/ProductInfo/ProductInfo";
 import Aside from "../components/Details/Aside/Aside";
