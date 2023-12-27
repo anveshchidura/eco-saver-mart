@@ -1,5 +1,5 @@
 
-const baseUrl = 'http://localhost:4000';
+const baseUrl = 'https://eco-saver-mart.onrender.com';
 
 
 export async function registerUser(userData) {
