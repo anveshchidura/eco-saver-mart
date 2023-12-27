@@ -1,0 +1,11 @@
+ol {
+    margin: 20px 0;
+    padding: 15px;
+    border-top-left-radius: 25px !important;
+    border-top-right-radius: 25px !important;
+    background-color: white;
+    border: 2px solid #055099;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: #333;
+    list-style-position: inside;
+}

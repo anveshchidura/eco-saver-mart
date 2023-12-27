@@ -1,0 +1,159 @@
+.dropdown-item svg {
+    margin-bottom: 2px;
+    margin-right: 7px;
+}
+
+.usernamecover {
+    padding: 4px;
+    border-radius: 50px;
+    background: #f7f7f7;
+    /* Light grey background */
+    border: 1px solid #ddd;
+    /* Light grey border */
+    font-family: serif;
+}
+
+.messages {
+    padding: 6px 10px;
+    border-radius: 50px;
+    background: #f7f7f7;
+    /* Light grey background */
+    border: 1px solid #ddd;
+    /* Light grey border */
+    font-family: serif;
+}
+
+.message {
+    color: black;
+    font-family: serif;
+}
+
+.msg-icon {
+    fill: black;
+}
+
+.username {
+    color: black;
+    font-family: serif;
+}
+
+#addButton svg {
+    font-size: 30pt;
+    color: #e8f4f8;
+    /* Consistent orange accent color */
+}
+
+#logoutButton svg {
+    background-color: none;
+    /* Consistent orange accent color */
+}
+
+#nav-sign-up {
+    padding: 10px;
+}
+
+#addButton {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.add-item.active,
+.add-item:focus,
+.add-item:hover,
+.add-item:active svg {
+    border-radius: 50px;
+    color: #ebe7e3;
+    /* Consistent orange accent color */
+    background-color: #f7f7f7;
+    /* Light grey background */
+    font-family: serif;
+}
+
+.navbar-nav .dropdown {
+    top: 3px;
+}
+
+#nav-sign-in {
+    color: white;
+    padding: 10px;
+    background: #343a40;
+    /* Consistent dark grey background */
+    border-radius: 5px;
+    font-family: serif;
+}
+
+.dropdown-toggle::after {
+    display: none;
+}
+
+.dropdown-toggle svg {
+    font-size: 24pt;
+}
+
+.navbar-nav svg {
+    color: black;
+    font-size: 20pt;
+}
+
+#collasible-nav-dropdown svg {
+    font-size: 24pt;
+}
+
+.dropleft .dropdown-toggle::before {
+    display: none;
+}
+
+.navbar-brand a {
+    font-family: serif;
+    font-style: italic;
+    font-size: 20pt;
+}
+
+.dropdown-item {
+    padding: 5px;
+    font-family: serif;
+}
+
+.dropdown-item.active,
+.dropdown-item:focus,
+.dropdown-item:hover,
+.dropdown-item:active svg {
+    border-radius: 50px;
+    color: #f7f7f7;
+
+    background-color: #ebe4de;
+
+    font-family: serif;
+}
+
+#navImg {
+    width: 32px;
+    height: 32px;
+    object-fit: cover;
+    border-radius: 50%;
+
+    border: 2px solid #f4ece4;
+}
+
+.logout {
+    padding: 4px;
+    border-radius: 50px;
+    background: #f7f7f7;
+    border: 1px solid #ddd;
+    font-family: serif;
+}
+
+.logo-config {
+    height: 80px;
+    margin-left: 20px;
+}
+
+.cnts-btn {
+    border-radius: 20px;
+}
+
+.color-nav {
+    background-color: #055099;
+}

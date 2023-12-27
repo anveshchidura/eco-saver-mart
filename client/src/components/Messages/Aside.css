@@ -1,0 +1,41 @@
+aside img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+aside {
+    border-right: 1px solid #a9a9a9;
+    background-color: #e8f4f8;
+}
+
+aside h3,
+aside h5 {
+    font-family: 'Merriweather', serif;
+    text-align: center;
+    border-bottom: 1px solid #a9a9a9;
+    padding: 15px;
+    margin: 0;
+    color: #3f3838;
+    transition: color 0.3s ease;
+}
+
+aside h3:hover,
+aside h5:hover {
+    color: #555;
+}
+
+.chat-connections {
+    border-bottom: 1px solid #a9a9a9;
+    padding: 10px;
+    margin: 10px;
+    background-color: #e8f4f8;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.chat-connections:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}

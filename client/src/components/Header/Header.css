@@ -1,0 +1,150 @@
+/* Dropdown Item SVG Styling */
+.dropdown-item svg {
+    margin-bottom: 2px;
+    margin-right: 7px;
+    vertical-align: middle;
+}
+
+/* Username Cover Styling */
+.usernamecover {
+    padding: 6px 12px;
+    border-radius: 50px;
+    background: #e6e6e6;
+    /* Lighter grey background for consistency */
+    border: 2px solid #055099;
+    /* Purple border for theme consistency */
+}
+
+/* Message Styling */
+.messages {
+    padding: 8px 15px;
+    border-radius: 50px;
+    background: #e6e6e6;
+    /* Lighter grey background for consistency */
+    border: 2px solid #055099;
+    /* Purple border for theme consistency */
+}
+
+.message {
+    color: #055099;
+    /* Purple text color for theme consistency */
+}
+
+.msg-icon {
+    fill: #055099;
+    /* Purple fill color for consistency with the message text */
+}
+
+.username {
+    color: #055099;
+    /* Purple text color for consistency */
+}
+
+/* Add Button Styling */
+#addButton svg {
+    font-size: 30pt;
+    color: #d3b38c;
+    /* Muted gold color retained for the icon */
+}
+
+#logoutButton svg {
+    background-color: transparent;
+}
+
+/* Navbar Sign Up Styling */
+#nav-sign-up,
+#addButton {
+    padding: 10px;
+    border-radius: 50px;
+    background-color: #d3b38c;
+    /* Muted gold background retained */
+    color: #fff;
+    /* White text color for contrast */
+    transition: background-color 0.3s;
+}
+
+#nav-sign-up:hover,
+#addButton:hover {
+    background-color: #055099;
+    /* Purple background on hover for consistency */
+}
+
+/* Active Item Styling */
+.add-item.active,
+.add-item:focus,
+.add-item.active svg {
+    background-color: #055099;
+    /* Purple background for active state */
+}
+
+/* Navbar Dropdown Styling */
+.navbar-nav .dropdown {
+    position: relative;
+}
+
+#nav-sign-in {
+    background: #055099;
+    /* Purple background for theme consistency */
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+#nav-sign-in:hover {
+    background-color: #a9a9a9;
+    /* Dark grey background on hover for contrast */
+}
+
+/* Dropdown Menu Arrow Hide */
+.dropdown-toggle::after {
+    display: none;
+}
+
+/* Navbar SVG Icon Styling */
+.navbar-nav svg {
+    color: #055099;
+    /* Purple color for icons for consistency */
+}
+
+/* Collapsible Dropdown SVG Styling */
+#collasible-nav-dropdown svg {
+    font-size: 24pt;
+}
+
+.dropleft .dropdown-toggle::before {
+    display: none;
+}
+
+.navbar-brand a {
+    font-family: "Merriweather", serif;
+    font-style: italic;
+    font-size: 20pt;
+    color: #055099;
+}
+
+.dropdown-item {
+    padding: 10px 20px;
+}
+
+#navImg {
+    border-radius: 50%;
+    border: 2px solid #055099;
+}
+
+.logout {
+    padding: 6px 12px;
+    border-radius: 50px;
+    background: #e6e6e6;
+    border: 2px solid #055099;
+}
+
+.logo-config {
+    height: 200px;
+}
+
+.cnts-btn {
+    border-radius: 20px;
+    background-color: #055099;
+    color: #fff;
+    padding: 8px 16px;
+    transition: background-color 0.3s;
+}

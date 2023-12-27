@@ -1,0 +1,34 @@
+#enableIcon {
+    font-size: 16px;
+    margin-left: 5%;
+    color: white;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+#enableIcon:hover {
+    color: #055099;
+}
+
+.disabled-card img {
+    filter: grayscale(100%);
+}
+
+.disabled-card .card {
+    background-color: #e6e6e6;
+    border: 2px solid #055099;
+    color: #055099;
+}
+
+.modal-footer a {
+    border: 1px solid white;
+    padding: 6px;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.modal-footer a:hover {
+    border-color: #055099;
+    color: #e6e6e6;
+    background-color: #055099;
+}

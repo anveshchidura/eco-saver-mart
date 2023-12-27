@@ -1,0 +1,46 @@
+.heading {
+    text-align: center;
+    font-family: serif;
+    padding-top: 10px;
+    padding-bottom: 30px;
+    color: #055099;
+    /* Purple text */
+}
+
+.btnForm,
+form>button {
+    margin-top: 20px;
+    padding: 8px 16px;
+    background-color: white;
+    /* White background for buttons */
+    border-radius: 20px;
+    border: 2px solid #055099;
+    /* Purple border */
+    color: #055099;
+    /* Purple text for buttons */
+}
+
+.btnForm:hover,
+form>button:hover {
+    background-color: #055099;
+    /* Purple background for buttons when hovered */
+    color: white;
+    /* White text for buttons when hovered */
+}
+
+.spinner-border {
+    width: 16px;
+    height: 16px;
+    margin-left: 9px;
+    margin-bottom: 3px;
+    color: #055099;
+    /* Purple spinner */
+}
+
+.box-here {
+    margin-bottom: 100px;
+    padding: 30px;
+    background-color: white;
+    border: 2px solid #055099;
+    border-radius: 25px;
+}

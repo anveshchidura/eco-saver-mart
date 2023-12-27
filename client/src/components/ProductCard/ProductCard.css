@@ -1,0 +1,135 @@
+.card-img-top {
+    height: 150px;
+    object-fit: cover;
+}
+
+.card {
+    margin-bottom: 2rem;
+    border: 1px solid #a9a9a9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card-text {
+    text-align: left;
+    font-weight: bold;
+    margin-left: 5px;
+    font-size: 12px;
+    color: #3f3838;
+}
+
+.card-title {
+    text-align: left;
+    font-weight: bold;
+    margin-left: 5px;
+    font-size: 15px;
+    color: #3f3838;
+}
+
+.card-footer {
+    text-align: left;
+    background-color: #e8f4f8;
+    border-top: 1px solid #a9a9a9;
+}
+
+#heartIcon {
+    font-size: 14pt;
+    cursor: pointer;
+}
+
+.userImg {
+    width: 35px;
+    height: 35px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 1px solid #a9a9a9;
+    margin: 12px;
+}
+
+.userName {
+    font-weight: bold;
+    font-size: 14px;
+    margin-left: 10px;
+    color: #3f3838;
+}
+
+.card-design {
+    border-radius: 20px;
+    border: 1px solid black;
+}
+
+.name-part {
+    font-size: 20px;
+    padding-top: 10px;
+    padding-left: 5px;
+    color: #3f3838;
+}
+
+.time-part {
+    font-size: 12px;
+    padding-top: 4px;
+    padding-left: 15px;
+    color: #3f3838;
+}
+
+.location {
+    text-align: center;
+    color: #3f3838;
+}
+
+.card-footer-adj {
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background-color: #e8f4f8;
+}
+
+.title-txt {
+    margin-left: 25px;
+    color: #3f3838;
+
+}
+
+.main-price {
+    font-size: 25px;
+    padding-right: 0;
+    color: #3f3838;
+}
+
+.org-price-content {
+    text-decoration: line-through;
+    color: gray;
+    font-size: 15px;
+}
+
+.discount-box {
+    margin-top: 5px;
+    padding: 10px;
+    font-size: 12px;
+    border-radius: 25px;
+    color: white;
+    background-color: #22e66a8d;
+}
+
+.blank-box {
+    display: none;
+}
+
+.image-box {
+    padding: 10px;
+    border-radius: 25px;
+}
+
+.fxd-prc,
+.ngo-prc {
+    border-radius: 25px;
+    background-color: #e67e22;
+    padding: 10px;
+    font-weight: normal;
+    text-align: center;
+    color: white;
+
+}
+
+.for-center {
+    text-align: center;
+    margin: 0 auto;
+}

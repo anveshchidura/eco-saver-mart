@@ -1,0 +1,132 @@
+.tab-content {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: white;
+
+}
+
+#heartIconDetails svg {
+    font-size: 34pt;
+    cursor: pointer;
+    margin-top: 22px;
+    color: #055099;
+
+}
+
+.product-info-heading {
+    font-size: 24px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: #055099;
+
+    font-weight: bold;
+}
+
+#detailsCardText {
+    margin-left: 8px;
+    color: #6CA0DC;
+
+}
+
+#details-footer {
+    text-align: right;
+    padding: 15px;
+    background-color: white;
+}
+
+#detailsProduct img {
+    height: 500px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.tab-pane {
+    text-indent: 50px;
+    text-align: justify;
+    letter-spacing: 1px;
+    color: #6CA0DC;
+
+}
+
+.fxd-prc,
+.ngo-prc {
+    border-radius: 25px;
+    background-color: #055099;
+    padding: 10px 20px;
+    font-weight: normal;
+    text-align: center;
+    color: white;
+    margin: 5px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.ngo-prc {
+    background-color: #6CA0DC;
+
+}
+
+.for-center {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.main-price {
+    font-size: 25px;
+    color: #055099;
+}
+
+.org-price-content {
+    text-decoration: line-through;
+    color: #bebebe;
+    font-size: 15px;
+}
+
+.discount-box1 {
+    margin-top: 5px;
+    font-size: 16px;
+    border-radius: 50px;
+    height: 35px;
+    padding: 5px 15px;
+    width: auto;
+    font-weight: bold;
+    color: white;
+    background-color: #055099;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.content-loc1 {
+    margin: 20px;
+    border: 2px solid #055099;
+    border-radius: 25px;
+    padding: 20px;
+    background-color: white;
+}
+
+.price-point1 {
+    margin-left: 20px;
+    padding-top: 5px;
+    color: #055099;
+}
+
+.desc-box {
+    border: 2px solid #055099;
+    border-radius: 25px;
+    padding: 20px;
+    background-color: white;
+}
+
+.org-price-content-blanker {
+    color: white;
+    font-size: 15px;
+}
+
+.discount-box1-more {
+    margin-top: 5px;
+    font-size: 16px;
+    border-radius: 50px;
+    height: 35px;
+    padding: 5px 15px;
+    width: auto;
+    color: #6CA0DC;
+    background-color: white;
+}

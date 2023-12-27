@@ -1,0 +1,99 @@
+#btnContact {
+    padding: 6px 12px;
+    margin-bottom: 45px;
+    background-color: #055099;
+    color: white;
+    border: 2px solid white;
+    border-radius: 25px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+#btnContact:hover {
+    background-color: #6CA0DC;
+    color: #e8f4f8;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+#btnContact svg {
+    font-size: 17pt;
+    margin-right: 5px;
+    vertical-align: middle;
+    color: white;
+}
+
+#product-price-heading,
+#price-heading,
+#guest-msg {
+    font-family: 'Merriweather', serif;
+    font-weight: bold;
+    color: #055099;
+}
+
+#edit-icon svg,
+#archive-icon svg {
+    fill: #055099;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+#edit-icon svg:hover,
+#archive-icon svg:hover {
+    transform: scale(1.1);
+}
+
+.product-details-seller {
+    text-align: center;
+    color: #055099;
+}
+
+#guest-msg a {
+    color: #055099;
+    transition: color 0.2s ease;
+}
+
+#guest-msg a:hover {
+    color: white;
+}
+
+.cs-btn,
+.d-btn {
+    background-color: #055099;
+    color: white;
+    margin-top: 20px;
+    border-radius: 20px;
+    margin-right: 10px;
+    width: 100px;
+    transition: all 0.3s ease;
+}
+
+.cs-btn:hover,
+.d-btn:hover {
+    background-color: #6CA0DC;
+    color: #e8f4f8;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+.modal-content {
+    border-radius: 20px;
+    background-color: white;
+    color: #055099;
+    border: 2px solid #055099;
+}
+
+.cnts-btn {
+    border-radius: 20px;
+    background-color: #055099;
+    color: white;
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+}
+
+.cnts-btn:hover {
+    background-color: #6CA0DC;
+    color: #e8f4f8;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+}

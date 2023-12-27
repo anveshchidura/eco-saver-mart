@@ -1,0 +1,15 @@
+#simpleSider {
+    background-color: #EDE7F6;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 135px;
+    margin-bottom: 2%;
+    text-align: center;
+    padding-top: 30px;
+    font-family: 'Merriweather', serif;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(102, 51, 153, 0.2);
+    border: 1px solid #D1C4E9;
+    color: #ffffff;
+}

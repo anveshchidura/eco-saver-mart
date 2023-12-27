@@ -1,0 +1,51 @@
+.image-box1 {
+    padding: 20px;
+    background: #e8f4f8;
+    border: 1px solid #a9a9a9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+}
+
+.image-box-internal {
+    border-radius: 12px;
+}
+
+.adde1 {
+    border-radius: 12px;
+}
+
+.location1 {
+    text-align: center;
+    font-family: 'Merriweather', serif;
+    color: #055099;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.card-text,
+.card-title,
+.userName,
+.name-part,
+.time-part,
+.title-txt,
+.main-price {
+    color: #055099;
+
+}
+
+.org-price-content {
+    text-decoration: line-through;
+    color: gray;
+    font-size: 15px;
+}
+
+.discount-box,
+.fxd-prc,
+.ngo-prc {
+    background-color: #e67e22;
+    color: white;
+}
+
+#heartIcon {
+    color: #055099;
+}

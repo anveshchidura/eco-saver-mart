@@ -1,0 +1,53 @@
+footer {
+    padding: 1.5rem;
+    background-color: #e6e6e6;
+    text-align: center;
+    color: #055099;
+    margin-top: 3%;
+    border-top: 2px solid #055099;
+}
+
+footer a {
+    color: #055099;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    text-decoration: underline;
+    color: #a9a9a9;
+}
+
+.connections {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.connections svg {
+    fill: #055099;
+    transition: fill 0.3s ease;
+}
+
+.connections a {
+    color: #055099;
+}
+
+.connections a:hover {
+    color: #a9a9a9;
+    transform: translateY(-2px);
+}
+
+#instaIcon,
+#fbIcon,
+#linkedIcon {
+    font-size: 30pt;
+    color: #055099;
+}
+
+#instaIcon:hover,
+#fbIcon:hover,
+#linkedIcon:hover {
+    fill: #a9a9a9;
+    transform: scale(1.1) translateY(-2px);
+}
